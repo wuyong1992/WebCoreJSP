@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>时间表</title>
+</head>
+<body>
+<div id="time"></div>
+<script type="text/javascript">
+    var trun = function(sec){
+        return (sec < 10) ? "0" + sec : sec;
+    }
+    var run = function(){
+        var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = d.getMonth() + 1;
+        var date = d.getDate();
+        var hours = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        var day = d.getDay();
+        var str = year + "-" + trun(month) + "-" + trun(date) + " " + trun(hours) + ":" + trun(minutes) + ":" + trun(seconds) + " " + weeks[day];
+        document.getElementById("time").innerHTML = str;
+        //window.setTimeout("run();" , 1000));设置一秒后失效，可以做定时器
+    }
+    //window.setTimeout("run();" , 1000));
+    window.setInterval("run();" , 1000);//设置1秒刷新一次
+</script>
+</body>
+</html>
