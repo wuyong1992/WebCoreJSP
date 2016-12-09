@@ -11,6 +11,25 @@
     <title>用户信息</title>
 </head>
 <body>
+<%
+    String name = "";
+    String password = "";
+    Cookie[] cookies = request.getCookies();
+    if (cookies.length > 0 && null != cookies) {
+        for (Cookie c : cookies) {
+            if (c.getName().equals("name")) {
+                name = c.getValue();
+            }
+            if (c.getName().equals("password")) {
+                password = c.getValue();
+            }
+        }
+    }
+%>
+<h2>
+    用户名：<%=name%><br>
+    密  码：<%=password%>
+</h2>
 
 </body>
 </html>
