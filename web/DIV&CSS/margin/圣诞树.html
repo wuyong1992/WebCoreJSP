@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用css和盒子模型中的margin创造出圣诞树</title>
+    <style>
+        #cont {
+            height: 800px;
+            background: black;
+        }
+        #div01 {
+             height: 0px;
+             width: 0px;
+             /*background-color: deeppink;*/
+             border-bottom: 80px solid green;
+             border-right: 80px solid black;
+             border-left: 80px solid black;
+             border-top: 80px solid black;
+
+             margin-left: 20px;
+         }
+        #div02 {
+            height: 0px;
+            width: 0px;
+            /*background-color: darkgreen;*/
+            /*border: 100px;*/
+            border-bottom: 100px solid green;
+            border-right: 100px solid black;
+            border-left: 100px solid black;
+            border-top: 100px solid black;
+            margin-bottom: 10px;
+        }
+
+        #div03 {
+            height: 300px;
+            width: 50px;
+            background-color: green;
+            margin-left: 75px;
+        }
+    </style>
+</head>
+<body>
+<div id="cont">
+    <div id="div01"></div>
+    <div id="div02"></div>
+    <div id="div03"></div>
+</div>
+</body>
+</html>
